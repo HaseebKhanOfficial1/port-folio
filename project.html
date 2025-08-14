@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects - Haseeb Khan</title>
+  <link rel="stylesheet" href="project.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+<button id="theme-toggle" aria-label="Toggle dark/light mode" class="theme-toggle-btn">
+  <i class="fa-solid fa-moon"></i>
+</button>
+
+<button class="settings-btn" id="settingsBtn" aria-label="Toggle Heading Color">
+  <i class="fas fa-gear"></i>
+</button>
+<!-- Theme Colors Panel (hidden by default) -->
+<div id="themePanel" class="theme-panel hidden">
+  <h4>Choose Heading Color</h4>
+  <input type="color" id="colorPicker" value="#9a4dff" />
+</div>
+
+  <header class="header">
+    <a href="index.html" class="back-button">← Back to Home</a>
+    <h1>My Projects</h1>
+    <p>Welcome to my Projects page! Here, you can explore my recent works and portfolio.</p>
+  </header>
+
+  <!-- Web Projects Section -->
+  <section id="web-projects" class="portfolio-section">
+    <h2 style="color: white; text-align:center; margin-bottom: 20px;">Web Projects</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <a href="https://rock-paper-scissors-gamebykrish.netlify.app/" target="_blank" rel="noopener noreferrer">
+          <img src="project1.png" alt="Rock Paper Scissors Game" />
+          <h3>Rock Paper Scissors Game</h3>
+        </a>
+      </div>
+
+      <div class="portfolio-item">
+        <a href="https://currencyconverterusingapi.netlify.app/" target="_blank" rel="noopener noreferrer">
+          <img src="project2.png" alt="Currency Converter" />
+          <h3>Currency Converter</h3>
+        </a>
+      </div>
+
+      <div class="portfolio-item">
+        <a href="https://glittering-toffee-d4d0d4.netlify.app/" target="_blank" rel="noopener noreferrer">
+          <img src="project3.png" alt="Project 3" />
+          <h3>Travel World Website</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apps Projects Section -->
+  <section id="apps-projects" class="portfolio-section" style="margin-top: 60px;">
+    <h2 style="color: white; text-align:center; margin-bottom: 20px;">Apps Projects</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <a href="https://play.google.com/store/apps/details?id=com.weather.forecast.rain.snow" target="_blank" rel="noopener noreferrer">
+          <img src="project4.png" alt="Weather App" />
+          <h3>Weather App</h3>
+        </a>
+      </div>
+
+      <div class="portfolio-item">
+        <a href="https://play.google.com/store/apps/details?id=com.appsuite.imagetotext" target="_blank" rel="noopener noreferrer">
+          <img src="project5.png" alt="Image to Text" />
+          <h3>Image to Text</h3>
+        </a>
+      </div>
+
+      <div class="portfolio-item">
+        <a href="https://play.google.com/store/apps/details?id=com.studio.zm.statussaver" target="_blank" rel="noopener noreferrer">
+          <img src="project6.png" alt="Status Saver" />
+          <h3>Status Saver</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+<script src="theme.js"></script>
+
+</body>
+</html>
