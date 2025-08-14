@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dark/Light Toggle Test</title>
+<style>
+  body {
+    background-color: #121212;
+    color: white;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    text-align: center;
+  }
+
+  #theme-toggle {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #9a4dff;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(154, 77, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: background-color 0.3s ease;
+  }
+
+  #theme-toggle:hover {
+    background-color: #7a31ff;
+  }
+
+  #theme-icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+  }
+</style>
+</head>
+<body>
+
+<h1>Dark/Light Mode Toggle Test</h1>
+<p>Click the button on right side to toggle theme.</p>
+
+<button id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle Dark/Light Mode">
+  <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M21.75 15.5a9 9 0 01-9-9 1 1 0 10-2 0 11 11 0 1011 11 1 1 0 000-2z"/>
+  </svg>
+</button>
+
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+
+  const moonPath = "M21.75 15.5a9 9 0 01-9-9 1 1 0 10-2 0 11 11 0 1011 11 1 1 0 000-2z";
+  const sunPath = "M12 4.5a1 1 0 110-2 1 1 0 010 2zm0 16a1 1 0 110-2 1 1 0 010 2zm7.78-12.47l1.42-1.42a1 1 0 111.42 1.42l-1.42 1.42a1 1 0 11-1.42-1.42zm-15.56 0a1 1 0 111.42-1.42L6.06 5.53a1 1 0 11-1.42 1.42zm15.56 12.94a1 1 0 011.42 1.42l-1.42 1.42a1 1 0 11-1.42-1.42l1.42-1.42zm-15.56 0l1.42 1.42a1 1 0 11-1.42 1.42L4.22 21.89a1 1 0 111.42-1.42zM12 8a4 4 0 100 8 4 4 0 000-8z";
+
+  let darkMode = true;
+
+  function updateTheme() {
+    if (darkMode) {
+      document.body.style.backgroundColor = "#121212";
+      document.body.style.color = "white";
+      themeIcon.setAttribute("d", moonPath);
+      toggleBtn.setAttribute("title", "Switch to Light Mode");
+      toggleBtn.setAttribute("aria-label", "Switch to Light Mode");
+    } else {
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "#121212";
+      themeIcon.setAttribute("d", sunPath);
+      toggleBtn.setAttribute("title", "Switch to Dark Mode");
+      toggleBtn.setAttribute("aria-label", "Switch to Dark Mode");
+    }
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    darkMode = !darkMode;
+    updateTheme();
+  });
+
+  updateTheme();
+</script>
+
+</body>
+</html>
+    

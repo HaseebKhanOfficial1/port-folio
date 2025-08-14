@@ -1,0 +1,233 @@
+
+:root {
+  /* Light mode colors */
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --header-bg: #f0f0f0;
+  --portfolio-bg: #ffffff;
+  --portfolio-text-color: #222222;
+  --portfolio-hover-color: #007bff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 30px;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: var(--header-bg);
+  padding: 20px 10px;
+  border-radius: 8px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--portfolio-hover-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+.back-button:hover {
+  text-decoration: underline;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-item {
+  background: var(--portfolio-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #ddd;
+}
+
+.portfolio-item h3 {
+  padding: 15px;
+  font-size: 1.2rem;
+  color: var(--portfolio-text-color);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.portfolio-item a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+.portfolio-item a:hover h3 {
+  color: var(--portfolio-hover-color);
+}
+
+/* DARK MODE */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --header-bg: #1e1e1e;
+  --portfolio-bg: #222222;
+  --portfolio-text-color: #ddd;
+  --portfolio-hover-color: #66aaff;
+  --shadow-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Dark mode overrides for back button */
+body.dark-mode .back-button {
+  color: var(--portfolio-hover-color);
+}
+
+/* Dark mode portfolio item hover */
+body.dark-mode .portfolio-item:hover {
+  box-shadow: 0 10px 20px rgba(102, 170, 255, 0.5);
+}
+
+/* Responsive (optional) */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+  
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .back-button {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* one column on mobile */
+    gap: 15px;
+  }
+  
+  .portfolio-item img {
+    height: 150px;
+  }
+  
+  .portfolio-item h3 {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+.theme-toggle-btn {
+  position: fixed;
+  top: 70%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: #333;
+  border: none;
+  width: 48px;           /* fixed width */
+  height: 48px;          /* fixed height */
+  border-radius: 50%;    /* perfect circle */
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: #555;
+}
+/* Settings button */
+.settings-btn {
+  position: fixed;
+  top: 320px;
+  right: 20px;
+  background: var(--portfolio-bg);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: var(--portfolio-text-color);
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+    animation: spin 3s linear infinite;
+
+}
+.settings-btn:hover {
+  background: var(--portfolio-hover-color);
+  color: white;
+  animation: spin 1s linear infinite;
+}
+
+
+/* Theme panel */
+.theme-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: var(--portfolio-bg);
+  color: var(--portfolio-text-color);
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+  width: 220px;
+  font-family: Arial, sans-serif;
+}
+
+.theme-panel.hidden {
+  display: none;
+}
+
+.theme-panel h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+#colorPicker {
+  width: 100%;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
