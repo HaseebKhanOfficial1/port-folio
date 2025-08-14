@@ -307,7 +307,7 @@ body.light-mode .intro-text p {
     }
    }
 /* Buttons */
-.hire-me, .portfolio, .projects {
+.hire-me, .portfolio, .projects,.github{
   padding: 10px 25px;
   margin-right: 10px;
   border: none;
@@ -323,7 +323,7 @@ body.light-mode .intro-text p {
   color: white;
 }
 
-.portfolio, .projects {
+.portfolio, .projects ,.github{
   background-color: transparent;
   color: #a366ff;
   border: 2px solid #a366ff;
@@ -335,7 +335,7 @@ body.light-mode .intro-text p {
 }
 
 .portfolio:hover,
-.projects:hover {
+.projects:hover,.github:hover {
   background-color: #a366ff;
   color: white;
 }

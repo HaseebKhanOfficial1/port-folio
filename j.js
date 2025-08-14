@@ -15,6 +15,7 @@ document.querySelector('.projects').addEventListener('click', function() {
   window.location.href = 'project.html';
 });
 
+
 // Hamburger menu toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
