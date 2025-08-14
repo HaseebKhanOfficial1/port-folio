@@ -14,6 +14,9 @@ document.querySelector('.portfolio').addEventListener('click', function() {
 document.querySelector('.projects').addEventListener('click', function() {
   window.location.href = 'project.html';
 });
+document.querySelector('.github').addEventListener('click', function() {
+  window.location.href = 'https://github.com/HaseebKhanOfficial1';
+});
 
 
 // Hamburger menu toggle
